@@ -18,7 +18,7 @@ def faster_lcm(a, b):
         return big
 
     gcd = faster_gcd(a, b)
-    return a * b / gcd
+    return int(a * b / gcd)
 
 if __name__ == "__main__":
     a, b = [int(num) for num in str(input()).split()]
