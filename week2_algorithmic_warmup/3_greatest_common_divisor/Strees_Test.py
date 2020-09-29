@@ -1,19 +1,20 @@
 import random
-from solution import fib_last_digit
-from fibonacci_last_digit import get_fibonacci_last_digit_naive
+from solution import faster_gcd
+from gcd import gcd_naive
 
 def Stress_Test(N):
     while True:
-        n = random.randint(1, N)
-        print(n)
+        a = random.randint(1, N)
+        b = random.randint(1, N)
+        print(a, b)
 
-        faster_fib = fib_last_digit(n)
-        naive_fib_n = get_fibonacci_last_digit_naive(n)
+        faster_gcd_n = faster_gcd(a, b)
+        gcd_naive_n = gcd_naive(a, b)
 
-        if faster_fib == naive_fib_n:
+        if faster_gcd_n == gcd_naive_n:
             print("OK!")
         else:
-            assert faster_fib == naive_fib_n, f"{faster_fib}, {naive_fib_n}"
+            assert faster_gcd_n == gcd_naive_n, f"{faster_gcd_n}, {gcd_naive_n}"
 
 if __name__ == '__main__':
     N = int(input())

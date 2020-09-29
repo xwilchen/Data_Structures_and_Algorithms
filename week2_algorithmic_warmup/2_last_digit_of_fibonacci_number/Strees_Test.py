@@ -1,14 +1,14 @@
 import random
-from fibonacci import calc_fib
-from naive_fib import naive_fib
+from solution import fib_last_digit
+from fibonacci_last_digit import get_fibonacci_last_digit_naive
 
 def Stress_Test(N):
     while True:
         n = random.randint(1, N)
         print(n)
 
-        faster_fib = calc_fib(n)
-        naive_fib_n = naive_fib(n)
+        faster_fib = fib_last_digit(n)
+        naive_fib_n = get_fibonacci_last_digit_naive(n)
 
         if faster_fib == naive_fib_n:
             print("OK!")
