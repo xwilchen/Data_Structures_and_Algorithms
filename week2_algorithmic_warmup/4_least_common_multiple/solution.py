@@ -1,4 +1,12 @@
-from gcd import faster_gcd
+def faster_gcd(a, b):
+    if a == b:
+        return a
+
+    big = max(a, b)
+    small = min(a, b)
+    while big % small != 0:
+        big, small = small, big % small
+    return small
 
 def faster_lcm(a, b):
     if a == b:
