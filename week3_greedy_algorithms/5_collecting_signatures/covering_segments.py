@@ -6,10 +6,14 @@ Segment = namedtuple('Segment', 'start end')
 
 def optimal_points(segments):
     points = []
+    segments = sorted(segments, key=lambda s: s.end)
     #write your code here
+    end = -1
     for s in segments:
-        points.append(s.start)
-        points.append(s.end)
+        if end < s.start:
+            end = s.end
+            points.append(end)
+
     return points
 
 if __name__ == '__main__':
